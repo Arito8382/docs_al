@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+:root {
+  color-scheme: dark;
+  background-color: #030712;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: max(884px, 100dvh);
+    overflow-x: hidden;
+    background-color: #030712;
+    color: #e1e3e4;
+    font-family: var(--font-sans);
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  pre,
+  code {
+    font-family: var(--font-mono);
+  }
+
+  ::selection {
+    background: #ddb7ff;
+    color: #490080;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #030712;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1f2937;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a855f7;
+  }
+}
+
+@layer components {
+  .site-shell {
+    @apply mx-auto max-w-[1440px] px-8;
+  }
+
+  .top-link {
+    @apply text-xs font-medium uppercase tracking-wider text-slate-400 transition-all duration-150 hover:text-white;
+  }
+
+  .top-link-active {
+    @apply text-purple-500;
+  }
+
+  .docs-top-link {
+    @apply text-xs font-medium uppercase tracking-tight text-slate-400 transition-all duration-150 hover:text-white;
+  }
+
+  .docs-top-link-active {
+    @apply border-b-2 border-purple-500 pb-1 text-purple-500;
+  }
+
+  .sidebar-link {
+    @apply flex items-center gap-3 border-l-4 border-transparent px-6 py-3 text-sm font-bold uppercase tracking-tight text-slate-500 transition-colors hover:bg-slate-900 hover:text-white;
+  }
+
+  .sidebar-link-active {
+    @apply border-purple-500 bg-purple-500/10 text-purple-500;
+  }
+
+  .footer-link {
+    @apply text-[10px] font-bold uppercase tracking-widest text-slate-600 underline decoration-2 decoration-purple-500 transition-all hover:text-white;
+  }
+
+  .glass-surface {
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(12px);
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #374151 #030712;
+  }
+}

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;family=JetBrains+Mono&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #030712;
+            color: #e1e3e4;
+        }
+        .glass-surface {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+        }
+        pre {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#842bd2",
+                        "secondary-fixed": "#dde2f3",
+                        "on-secondary-fixed-variant": "#414754",
+                        "inverse-surface": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "background": "#111415",
+                        "outline": "#988d9f",
+                        "on-primary": "#490080",
+                        "surface-dim": "#111415",
+                        "surface-container-highest": "#323536",
+                        "secondary-fixed-dim": "#c1c6d7",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#161c28",
+                        "on-primary-fixed-variant": "#6900b3",
+                        "surface-container": "#1d2021",
+                        "secondary": "#c1c6d7",
+                        "on-background": "#e1e3e4",
+                        "inverse-on-surface": "#2e3132",
+                        "surface": "#111415",
+                        "on-primary-fixed": "#2c0051",
+                        "tertiary-container": "#bd871a",
+                        "primary": "#ddb7ff",
+                        "tertiary": "#fabc4e",
+                        "on-tertiary": "#432c00",
+                        "on-tertiary-container": "#3a2600",
+                        "outline-variant": "#4d4354",
+                        "primary-fixed-dim": "#ddb7ff",
+                        "tertiary-fixed": "#ffdead",
+                        "primary-container": "#b76dff",
+                        "surface-tint": "#ddb7ff",
+                        "surface-bright": "#373a3b",
+                        "on-surface": "#e1e3e4",
+                        "tertiary-fixed-dim": "#fabc4e",
+                        "surface-variant": "#323536",
+                        "secondary-container": "#434957",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#281900",
+                        "surface-container-lowest": "#0c0f10",
+                        "primary-fixed": "#f0dbff",
+                        "surface-container-low": "#191c1d",
+                        "on-primary-container": "#400071",
+                        "on-secondary-container": "#b3b8c8",
+                        "on-secondary": "#2b303d",
+                        "surface-container-high": "#282a2b",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#cfc2d6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "stack-sm": "8px",
+                        "margin-page": "48px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "code": ["JetBrains Mono"],
+                        "h3": ["Inter"],
+                        "h1": ["Inter"],
+                        "ui-label": ["Inter"],
+                        "h2": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "code": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "800"}],
+                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "ui-label": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Anchor -->
+<header class="bg-[#030712] border-b-2 border-slate-800 sticky top-0 z-50">
+<div class="flex justify-between items-center px-8 h-20 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-4"><button class="lg:hidden flex items-center justify-center p-2 -ml-2 text-slate-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'wght' 200;">menu</span>
+</button>
+<span class="material-symbols-outlined text-purple-500" data-icon="terminal">terminal</span>
+<span class="font-inter tracking-tighter uppercase text-purple-500 text-2xl">DOCS_CORE</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-ui-label text-slate-400">
+<a class="text-purple-500 border-purple-500 font-medium" href="#">Overview</a>
+<a class="hover:text-white transition-all duration-150 font-medium" href="#">Installation</a>
+<a class="hover:text-white transition-all duration-150 font-medium" href="#">API</a>
+<a class="hover:text-white transition-all duration-150 font-medium" href="#">Resources</a>
+</nav>
+<div class="bg-slate-900 px-3 py-1 border border-slate-700 text-slate-300 font-code text-xs rounded-full">
+                v2.4.0
+            </div>
+</div>
+</header>
+<div class="max-w-[1440px] mx-auto flex">
+<!-- Sidebar Navigation Drawer -->
+<aside class="hidden lg:flex flex-col w-80 h-[calc(100vh-80px)] border-r-2 border-slate-800 bg-[#030712] sticky top-20 overflow-y-auto">
+<div class="p-8">
+<h3 class="font-inter font-bold text-sm uppercase tracking-tight text-white mb-6">ENGINEERED_SYSTEMS</h3>
+<nav class="flex flex-col space-y-2">
+<a class="border-l-4 border-purple-500 bg-purple-500/10 text-purple-500 py-3 px-6 font-inter font-bold text-sm uppercase tracking-tight" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                            Overview
+                        </div>
+</a>
+<a class="text-slate-500 py-3 px-6 border-l-4 border-transparent hover:bg-slate-900 hover:text-white transition-colors font-inter font-bold text-sm uppercase tracking-tight" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+                            Installation
+                        </div>
+</a>
+<a class="text-slate-500 py-3 px-6 border-l-4 border-transparent hover:bg-slate-900 hover:text-white transition-colors font-inter font-bold text-sm uppercase tracking-tight" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+                            CLI Reference
+                        </div>
+</a>
+<a class="text-slate-500 py-3 px-6 border-l-4 border-transparent hover:bg-slate-900 hover:text-white transition-colors font-inter font-bold text-sm uppercase tracking-tight" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+                            Components
+                        </div>
+</a>
+<a class="text-slate-500 py-3 px-6 border-l-4 border-transparent hover:bg-slate-900 hover:text-white transition-colors font-inter font-bold text-sm uppercase tracking-tight" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+                            Architecture
+                        </div>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-8">
+<div class="p-4 bg-slate-900 border border-slate-800">
+<p class="text-[10px] font-bold text-slate-500 mb-2 uppercase tracking-widest">Support the project</p>
+<button class="w-full bg-purple-500 text-[#030712] font-black py-2 text-xs uppercase tracking-tighter active:opacity-80 transition-all rounded-full">
+                        GitHub Star
+                    </button>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-8 md:px-16 py-12 lg:py-20 min-w-0">
+<!-- Hero Section -->
+<article class="max-w-4xl mx-auto">
+<header class="mb-12">
+<nav class="flex items-center gap-2 text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">
+<span>Docs</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<span>Getting Started</span>
+<span class="material-symbols-outlined text-[12px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-purple-500">Introduction</span>
+</nav>
+<h1 class="font-h1 text-h1 text-on-surface mb-6">Introduction to TechDocs</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        A high-performance technical documentation framework engineered for clarity, speed, and structural integrity.
+                    </p>
+</header>
+<!-- New in v2.0 Callout -->
+<section class="mb-12">
+<div class="border-l-4 border-purple-500 bg-purple-500/5 p-8 relative overflow-hidden">
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-purple-500 text-[#030712] px-2 py-0.5 text-[10px] font-black uppercase tracking-widest">New in v2.0</span>
+<h4 class="font-h3 text-lg text-white">Advanced Telemetry Integration</h4>
+</div>
+<p class="text-on-surface-variant font-body-md">
+                                Version 2.0 introduces native support for real-time telemetry streaming directly into your documentation components. Experience zero-latency performance monitoring and hot-reloading for all code snippets and live examples.
+                            </p>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-[120px]" data-icon="bolt">bolt</span>
+</div>
+</div>
+</section>
+<section class="mb-12">
+<h2 class="font-h2 text-h2 text-on-surface mb-6">Core Philosophy</h2>
+<p class="font-body-md text-on-surface-variant mb-6">
+                        Technical documentation shouldn't just be informative; it should be an extension of your engineering standards. TechDocs is built on three pillars of uncompromising quality that ensure your developers spend less time searching and more time shipping.
+                    </p>
+<!-- Feature Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+<div class="border border-slate-800 p-6 hover:border-purple-500 transition-colors bg-surface-container-low">
+<span class="material-symbols-outlined text-purple-500 mb-4" data-icon="speed">speed</span>
+<h3 class="font-h3 text-xl text-white mb-2">Turbo Performance</h3>
+<p class="text-sm text-on-surface-variant">Static site generation with incremental builds for lightning-fast page transitions.</p>
+</div>
+<div class="border border-slate-800 p-6 hover:border-purple-500 transition-colors bg-surface-container-low">
+<span class="material-symbols-outlined text-purple-500 mb-4" data-icon="terminal">terminal</span>
+<h3 class="font-h3 text-xl text-white mb-2">CLI First</h3>
+<p class="text-sm text-on-surface-variant">Automated documentation extraction via our proprietary command-line interface.</p>
+</div>
+</div>
+</section>
+<!-- Code Section -->
+<section class="mb-12">
+<h2 class="font-h2 text-h2 text-on-surface mb-6">Quick Start</h2>
+<p class="font-body-md text-on-surface-variant mb-6">
+                        Initialize your environment with a single command. TechDocs handles dependencies and environment variables automatically.
+                    </p>
+<div class="border border-slate-800 overflow-hidden">
+<div class="bg-slate-900 px-4 py-2 border-b border-slate-800 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-slate-700"></div>
+<div class="w-3 h-3 rounded-full bg-slate-700"></div>
+<div class="w-3 h-3 rounded-full bg-slate-700"></div>
+<span class="ml-4 text-[10px] font-bold text-slate-500 uppercase tracking-widest font-inter">terminal // bash</span>
+</div>
+<button class="flex items-center gap-1 text-[10px] font-bold text-purple-400 hover:text-white transition-colors uppercase tracking-widest rounded-full px-3 py-1 bg-slate-800">
+<span class="material-symbols-outlined text-[14px]" data-icon="content_copy">content_copy</span>
+                                Copy
+                            </button>
+</div>
+<pre class="p-6 bg-black overflow-x-auto text-sm leading-relaxed"><code><span class="text-purple-400">$</span> <span class="text-white">npm install</span> <span class="text-tertiary">@obsidian-labs/techdocs-core</span>
+<span class="text-slate-500"># Initializing documentation engine...</span>
+<span class="text-purple-400">$</span> <span class="text-white">techdocs init</span> <span class="text-green-400">--project-name</span> my-awesome-docs
+<span class="text-slate-500"># Setting up core architecture...</span>
+<span class="text-white">Success! Documentation live at: </span><span class="text-purple-400">http://localhost:3000</span></code></pre>
+</div>
+</section>
+<!-- Visual Content -->
+<section class="mb-20">
+<div class="aspect-video relative mb-6">
+<img alt="Advanced Tech Visualization" class="w-full h-full object-cover grayscale brightness-50 contrast-125" data-alt="A macro cinematic shot of a high-tech circuit board glowing with neon purple energy pulses. The lighting is dramatic and low-key, emphasizing the intricate metallic textures and geometric patterns of the silicon chips. Dark obsidian reflections glisten on the hardware surfaces, creating a sense of mysterious and powerful computational depth. The overall aesthetic is futuristic, clean, and uncompromisingly engineered." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO8A_YvI-Xi0BEF-WpTip1h2psbvzs-3LzJFbbBUp3Z3Fgr36jOOUMHgUMFtgOBCfWVAK-SnGj1VsAPl-wcoUzAtT8w6tVpLC3qHJKJyYY8pFLH5eEEB8G5fs-DAUKBqFYBi291Ukkc1lelud_0dfsx29bMPixXO6RTVT-VYDc7WpathhQtLbpEN4rgaXG1q2HiWecfAVydAeWpU21KURkH8kz-_hdZFahuG656ZkETMb7cssO7P_k6syiUEQGTl-RVLxqKUWbY7c"/>
+<div class="absolute inset-0 border border-purple-500/30 pointer-events-none"></div>
+<div class="absolute bottom-4 left-4 glass-surface border border-slate-700 p-4 max-w-xs">
+<p class="text-[10px] font-bold text-white uppercase tracking-widest mb-1">Architecture Visualization</p>
+<p class="text-[12px] text-slate-400">Diagram of the v2.4 execution pipeline and data-layer distribution.</p>
+</div>
+</div>
+</section>
+<!-- Footer Navigation -->
+<footer class="mt-20 pt-12 border-t-2 border-slate-800">
+<div class="flex justify-between items-center">
+<a class="group" href="#">
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2 block">Previous</span>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-purple-500 transition-colors" data-icon="arrow_back">arrow_back</span>
+<span class="font-h3 text-lg text-slate-400 group-hover:text-white transition-colors">Project Goals</span>
+</div>
+</a>
+<a class="group text-right" href="#">
+<span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2 block">Next</span>
+<div class="flex items-center gap-3 justify-end">
+<span class="font-h3 text-lg text-white group-hover:text-purple-500 transition-colors">Installation</span>
+<span class="material-symbols-outlined text-purple-500 text-[32px] group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</a>
+</div>
+</footer>
+</article>
+</main>
+</div>
+<!-- Global Footer -->
+<footer class="bg-[#030712] border-t-2 border-slate-800">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 max-w-[1440px] mx-auto">
+<div class="mb-8 md:mb-0">
+<span class="font-inter font-bold text-[10px] uppercase tracking-widest text-slate-600">
+                    © 2024 OBSIDIAN_LABS // ALL RIGHTS RESERVED
+                </span>
+</div>
+<div class="flex flex-wrap justify-center gap-8 font-inter font-bold text-[10px] uppercase tracking-widest">
+<a class="text-slate-600 hover:text-white underline decoration-2 decoration-purple-500" href="#">Status</a>
+<a class="text-slate-600 hover:text-white underline decoration-2 decoration-purple-500" href="#">Changelog</a>
+<a class="text-slate-600 hover:text-white underline decoration-2 decoration-purple-500" href="#">Github</a>
+<a class="text-slate-600 hover:text-white underline decoration-2 decoration-purple-500" href="#">Security</a>
+</div>
+<div class="mt-8 md:mt-0">
+<span class="font-black text-purple-500 text-lg">OBSIDIAN_LABS</span>
+</div>
+</div>
+</footer>
+</body></html>

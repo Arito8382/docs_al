@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1F2937;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #A855F7;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-primary": "#842bd2",
+                        "secondary-fixed": "#dde2f3",
+                        "on-secondary-fixed-variant": "#414754",
+                        "inverse-surface": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "background": "#111415",
+                        "outline": "#988d9f",
+                        "on-primary": "#490080",
+                        "surface-dim": "#111415",
+                        "surface-container-highest": "#323536",
+                        "secondary-fixed-dim": "#c1c6d7",
+                        "error-container": "#93000a",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#161c28",
+                        "on-primary-fixed-variant": "#6900b3",
+                        "surface-container": "#1d2021",
+                        "secondary": "#c1c6d7",
+                        "on-background": "#e1e3e4",
+                        "inverse-on-surface": "#2e3132",
+                        "surface": "#111415",
+                        "on-primary-fixed": "#2c0051",
+                        "tertiary-container": "#bd871a",
+                        "primary": "#ddb7ff",
+                        "tertiary": "#fabc4e",
+                        "on-tertiary": "#432c00",
+                        "on-tertiary-container": "#3a2600",
+                        "outline-variant": "#4d4354",
+                        "primary-fixed-dim": "#ddb7ff",
+                        "tertiary-fixed": "#ffdead",
+                        "primary-container": "#b76dff",
+                        "surface-tint": "#ddb7ff",
+                        "surface-bright": "#373a3b",
+                        "on-surface": "#e1e3e4",
+                        "tertiary-fixed-dim": "#fabc4e",
+                        "surface-variant": "#323536",
+                        "secondary-container": "#434957",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#281900",
+                        "surface-container-lowest": "#0c0f10",
+                        "primary-fixed": "#f0dbff",
+                        "surface-container-low": "#191c1d",
+                        "on-primary-container": "#400071",
+                        "on-secondary-container": "#b3b8c8",
+                        "on-secondary": "#2b303d",
+                        "surface-container-high": "#282a2b",
+                        "on-error-container": "#ffdad6",
+                        "on-surface-variant": "#cfc2d6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "16px",
+                        "stack-lg": "32px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "stack-sm": "8px",
+                        "margin-page": "48px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "code": ["monospace"],
+                        "h3": ["Inter"],
+                        "h1": ["Inter"],
+                        "ui-label": ["Inter"],
+                        "h2": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "code": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h3": ["24px", {"lineHeight": "1.3", "fontWeight": "800"}],
+                        "h1": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "ui-label": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-[#030712] text-on-surface font-body-md min-h-screen">
+<!-- Global TopAppBar -->
+<header class="bg-[#030712] border-slate-800 fixed top-0 w-full z-40">
+<div class="flex justify-between items-center px-8 h-20 max-w-[1440px] mx-auto">
+<div class="flex items-center gap-4"><button class="flex items-center justify-center p-1 -ml-1 text-slate-400 hover:text-white transition-colors focus:outline-none">
+<span class="material-symbols-outlined !font-light" style="font-variation-settings: 'wght' 200;">menu</span>
+</button>
+<span class="material-symbols-outlined text-purple-500 text-2xl" data-icon="terminal">terminal</span>
+<span class="font-inter font-black tracking-tighter uppercase text-purple-500 text-2xl">DOCS_CORE</span>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-400 hover:text-white font-ui-label text-ui-label transition-all duration-150" href="#">DOCS</a>
+<a class="text-slate-400 hover:text-white font-ui-label text-ui-label transition-all duration-150" href="#">GUIDES</a>
+<a class="text-purple-500 border-b-2 border-purple-500 pb-1 font-ui-label text-ui-label" href="#">SEARCH</a>
+</div>
+<div class="flex items-center gap-4"><button class="flex items-center justify-center p-1 -ml-1 text-slate-400 hover:text-white transition-colors focus:outline-none">
+<span class="material-symbols-outlined !font-light" style="font-variation-settings: 'wght' 200;">menu</span>
+</button>
+<span class="font-inter font-black tracking-tighter uppercase text-purple-500 text-sm">v2.4.0</span>
+</div>
+</div>
+</header>
+<!-- Main Content Background (Visual Anchor) -->
+<main class="pt-20 flex min-h-screen">
+<!-- Sidebar -->
+<aside class="w-80 border-r-2 border-slate-800 bg-[#030712] fixed h-[calc(100vh-80px)] overflow-y-auto hidden lg:block">
+<div class="p-8">
+<h3 class="font-inter font-bold text-lg uppercase tracking-tight text-white mb-6">ENGINEERED_SYSTEMS</h3>
+<nav class="flex flex-col space-y-2">
+<div class="border-l-4 border-purple-500 bg-purple-500/10 text-purple-500 py-3 px-6 font-inter font-bold text-sm uppercase tracking-tight cursor-pointer rounded-full mx-2 border-l-0">
+                        Overview
+                    </div>
+<div class="text-slate-500 py-3 px-6 border-l-4 border-transparent hover:bg-slate-900 hover:text-white transition-colors font-inter font-bold text-sm uppercase tracking-tight cursor-pointer">
+                        Installation
+                    </div>
+<div class="text-slate-500 py-3 px-6 border-l-4 border-transparent hover:bg-slate-900 hover:text-white transition-colors font-inter font-bold text-sm uppercase tracking-tight cursor-pointer">
+                        CLI Reference
+                    </div>
+<div class="text-slate-500 py-3 px-6 border-l-4 border-transparent hover:bg-slate-900 hover:text-white transition-colors font-inter font-bold text-sm uppercase tracking-tight cursor-pointer">
+                        Components
+                    </div>
+<div class="text-slate-500 py-3 px-6 border-l-4 border-transparent hover:bg-slate-900 hover:text-white transition-colors font-inter font-bold text-sm uppercase tracking-tight cursor-pointer">
+                        Architecture
+                    </div>
+</nav>
+</div>
+</aside>
+<!-- Dummy Content Layer -->
+<section class="lg:ml-80 flex-1 p-12">
+<div class="max-w-4xl">
+<h1 class="font-h1 text-h1 text-white mb-8">Documentation Overview</h1>
+<p class="text-body-lg font-body-lg text-slate-400 mb-12">Select a module to begin exploring our high-performance technical systems. Use the command bar to quickly jump between specifications.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="border border-slate-800 p-8 hover:border-purple-500 transition-colors bg-surface-container">
+<h2 class="text-h3 font-h3 text-white mb-4">Core Engine</h2>
+<p class="text-body-md font-body-md text-slate-500">Deep-dive into the low-level architecture of our document processing kernel.</p>
+</div>
+<div class="border border-slate-800 p-8 hover:border-purple-500 transition-colors bg-surface-container">
+<h2 class="text-h3 font-h3 text-white mb-4">API Interface</h2>
+<p class="text-body-md font-body-md text-slate-500">REST and GraphQL endpoints for seamless platform integration.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Search Overlay -->
+<div class="fixed inset-0 z-50 flex items-start justify-center pt-24 px-4 bg-[#030712]/80 backdrop-blur-md">
+<!-- Modal Container -->
+<div class="w-full max-w-3xl bg-[#111415] border-2 border-slate-800 flex flex-col shadow-[0_0_50px_rgba(168,85,247,0.1)]">
+<!-- Search Header -->
+<div class="p-6 border-b-2 border-slate-800 flex items-center gap-6">
+<span class="material-symbols-outlined text-purple-500 text-3xl" data-icon="search">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-white font-h2 text-h2 placeholder-slate-700 outline-none" placeholder="Search core systems..." type="text" value="Component"/>
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 bg-slate-900 border border-slate-700 font-code text-code text-slate-400 rounded-full">
+<span>ESC</span>
+</div>
+</div>
+<!-- Results Content -->
+<div class="overflow-y-auto max-h-[530px]">
+<!-- Section: Components -->
+<div class="px-8 py-6">
+<h3 class="font-inter font-black text-[12px] uppercase tracking-widest text-slate-500 mb-4 flex items-center gap-2">
+<span class="w-2 h-2 bg-purple-500"></span>
+                        Components
+                    </h3>
+<div class="space-y-4">
+<!-- Result Item -->
+<div class="group p-4 border border-transparent hover:border-purple-500 hover:bg-purple-500/5 cursor-pointer transition-all duration-150 rounded-xl">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-inter font-bold text-lg text-white">
+                                    Navigation<span class="text-purple-500">Component</span>
+</h4>
+<span class="bg-purple-500 text-black font-inter font-bold text-[10px] px-2 py-0.5 uppercase tracking-tighter rounded-full px-3">Updated</span>
+</div>
+<p class="text-slate-500 text-sm font-body-md leading-relaxed">High-performance structural shell supporting nested hierarchies and semantic state locks.</p>
+</div>
+<!-- Result Item -->
+<div class="group p-4 border border-transparent hover:border-purple-500 hover:bg-purple-500/5 cursor-pointer transition-all duration-150 rounded-xl">
+<h4 class="font-inter font-bold text-lg text-white mb-1">
+                                DataGrid<span class="text-purple-500">Component</span>
+</h4>
+<p class="text-slate-500 text-sm font-body-md leading-relaxed">Virtualized layout engine for massive technical datasets with inline editing support.</p>
+</div>
+</div>
+</div>
+<!-- Section: API Reference -->
+<div class="px-8 py-6 bg-slate-950/50 border-t border-slate-800">
+<h3 class="font-inter font-black text-[12px] uppercase tracking-widest text-slate-500 mb-4 flex items-center gap-2">
+<span class="w-2 h-2 bg-purple-500"></span>
+                        API Reference
+                    </h3>
+<div class="space-y-4">
+<div class="group p-4 border border-transparent hover:border-purple-500 hover:bg-purple-500/5 cursor-pointer transition-all duration-150 rounded-xl">
+<div class="flex items-center gap-3 mb-1">
+<span class="font-code text-xs px-2 py-0.5 bg-slate-800 text-purple-400 font-bold border border-slate-700">POST</span>
+<h4 class="font-inter font-bold text-lg text-white">
+                                    /v2/register-<span class="text-purple-500">component</span>
+</h4>
+</div>
+<p class="text-slate-500 text-sm font-body-md leading-relaxed">Registers a new UI primitive into the global system registry for instant availability.</p>
+</div>
+</div>
+</div>
+<!-- Section: Articles -->
+<div class="px-8 py-6 border-t border-slate-800">
+<h3 class="font-inter font-black text-[12px] uppercase tracking-widest text-slate-500 mb-4 flex items-center gap-2">
+<span class="w-2 h-2 bg-purple-500"></span>
+                        Articles
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex gap-4 p-4 hover:bg-slate-900 cursor-pointer border border-transparent hover:border-slate-800 transition-all">
+<div class="w-16 h-16 shrink-0 border border-slate-800 overflow-hidden bg-slate-900 rounded-full">
+<img class="w-full h-full object-cover rounded-full" data-alt="A macro close-up of a high-tech computer motherboard with glowing purple circuitry tracing complex patterns across a dark obsidian surface. The lighting is cold and atmospheric, emphasizing the precision of the microchips and soldered joints. Deep shadows contrast with the neon violet light, creating a sense of advanced engineering and digital power in a minimalist studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXdCjrLUUnwgwLbNf9N-8wAcghWGTE3r728XInXWL0DY5MQvZJqud5HyoTAqGWZSndICZO_LrdsMuurWo-FdjXCo-aVNjbwVcg9yOIZpIBsCH9iAmOldNNUkVsgZuIz4Vxw0SpZ36XtmYUDYKKaOLaW3sXp7VSuDRlEtOiPfRcrrFLtI5bpcJ5tEI7FjKDk_tvvoFE_bxvE3U3UvSf8708su6jnsfMmMsDlBvGuZ3JZ1eCYw0wcwyGSG1hLqeW7fMnzGJfzekORfg"/>
+</div>
+<div>
+<h4 class="font-inter font-bold text-white text-sm">Building Custom <span class="text-purple-500">Components</span></h4>
+<span class="text-slate-600 text-[10px] uppercase font-bold">5 min read</span>
+</div>
+</div>
+<div class="flex gap-4 p-4 hover:bg-slate-900 cursor-pointer border border-transparent hover:border-slate-800 transition-all">
+<div class="w-16 h-16 shrink-0 border border-slate-800 overflow-hidden bg-slate-900 rounded-full">
+<img class="w-full h-full object-cover rounded-full" data-alt="A conceptual 3D render of a geometric abstract sculpture made of reflective glass and matte black metal floating in a void. Soft purple ambient light reflects off the sharp edges of the structure, creating complex gradients and highlights. The overall mood is futuristic and architectural, maintaining a clean, high-contrast aesthetic that fits a technical developer environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDodXosNRSt2d1Vxl4NQhVh9AbyspD0EMdq9uU_2OjqDp8lepBbKrUSoakqHWX3PTc3baQiZf0LHS2ADaFJTHGwzihSqoZAruYxVcTiiKdT9yqg3Wva9QKmgF1ghLRLP2olITWNYyhuSiMG_1vANyLBqeAVjg-2Y336QmcuywafTl7pzcA2cfxAkJn6L9HF3VzmqfZuIbQq0V2aj7GFA9GaELFH5oqMAr1mkQju4YbuDH8OawSmFjKBkQgBuUmVA6c3qI9ewYsf88c"/>
+</div>
+<div>
+<h4 class="font-inter font-bold text-white text-sm"><span class="text-purple-500">Component</span> Lifecycle Hooks</h4>
+<span class="text-slate-600 text-[10px] uppercase font-bold">12 min read</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Stats -->
+<div class="p-4 border-t-2 border-slate-800 bg-slate-950 flex justify-between items-center px-8">
+<div class="flex gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-600 text-sm" data-icon="keyboard_arrow_up">keyboard_arrow_up</span>
+<span class="material-symbols-outlined text-slate-600 text-sm" data-icon="keyboard_arrow_down">keyboard_arrow_down</span>
+<span class="text-[10px] font-inter font-bold text-slate-600 uppercase tracking-widest">Navigate</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-600 text-sm" data-icon="keyboard_return">keyboard_return</span>
+<span class="text-[10px] font-inter font-bold text-slate-600 uppercase tracking-widest">Select</span>
+</div>
+</div>
+<div class="text-[10px] font-inter font-bold text-slate-600 uppercase tracking-widest">
+                    Showing 4 of 28 results
+                </div>
+</div>
+</div>
+</div>
+<!-- Global Footer -->
+<footer class="bg-[#030712] border-t-2 border-slate-800 mt-auto relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 max-w-[1440px] mx-auto">
+<span class="font-inter font-bold text-[10px] uppercase tracking-widest text-slate-600 mb-4 md:mb-0">
+                © 2024 OBSIDIAN_LABS // ALL RIGHTS RESERVED
+            </span>
+<div class="flex space-x-8">
+<a class="font-inter font-bold text-[10px] uppercase tracking-widest text-slate-600 hover:text-white underline decoration-2 decoration-purple-500 transition-all" href="#">STATUS</a>
+<a class="font-inter font-bold text-[10px] uppercase tracking-widest text-slate-600 hover:text-white underline decoration-2 decoration-purple-500 transition-all" href="#">CHANGELOG</a>
+<a class="font-inter font-bold text-[10px] uppercase tracking-widest text-slate-600 hover:text-white underline decoration-2 decoration-purple-500 transition-all" href="#">GITHUB</a>
+<a class="font-inter font-bold text-[10px] uppercase tracking-widest text-slate-600 hover:text-white underline decoration-2 decoration-purple-500 transition-all" href="#">SECURITY</a>
+</div>
+</div>
+</footer>
+</body></html>

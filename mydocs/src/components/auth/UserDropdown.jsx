@@ -1,7 +1,7 @@
 import { Key, LogOut, User } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
 
-import { useAuth } from '../../contexts/AuthContext'
+import { useAuth } from '../../contexts/useAuth'
 
 export default function UserDropdown() {
   const { user, logout } = useAuth()

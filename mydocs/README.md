@@ -1,13 +1,15 @@
 # AmbaLabs Docs
 
-Website dokumentasi multipage berbasis `React + Vite` yang meniru tampilan referensi `stitch_docs`, tetapi sekarang sudah disusun ke struktur React yang rapi.
+Website dokumentasi multipage berbasis `React + Vite` untuk package npm `ambalabs`.
 
 ## Halaman
 
 - `/index.html` untuk landing overview
-- `/article.html` untuk halaman installation / article
+- `/article.html` untuk getting started
 - `/api-reference.html` untuk API reference
-- `/search.html` untuk search overlay
+- `/api-keys.html` untuk examples dan snippets
+- `/architecture.html` untuk package notes
+- `/search.html` untuk pencarian isi dokumentasi
 
 ## Struktur
 
@@ -16,7 +18,7 @@ Website dokumentasi multipage berbasis `React + Vite` yang meniru tampilan refer
 - `src/pages` untuk komponen halaman utama
 - `src/data` untuk navigasi dan konten statis
 - `src/styles/globals.css` untuk token visual dan utility global
-- `src/reference/stitch-docs` untuk menyimpan salinan referensi HTML asli
+- `src/reference/stitch-docs` berisi referensi lama dan bukan sumber konten aktif
 
 ## Menjalankan proyek
 
@@ -31,3 +33,10 @@ npm run dev
 npm run lint
 npm run build
 ```
+
+## Tujuan
+
+Dokumentasi ini harus selalu mengikuti package yang dipublish di npm:
+
+- package: `ambalabs`
+- repository: `Arito8382/Pkg-AmbaLabs`

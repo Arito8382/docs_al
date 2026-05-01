@@ -1,17 +1,12 @@
 import { Menu } from 'lucide-react'
 import { useState } from 'react'
 
-import { useAuth } from '../../contexts/AuthContext'
 import { globalHeaderLinks, sidebarLinks } from '../../data/navigation'
-import AuthModal from '../auth/AuthModal'
-import UserDropdown from '../auth/UserDropdown'
 import Brand from './Brand'
 import MobileDrawer from './MobileDrawer'
 
 function MarketingHeader() {
   const [open, setOpen] = useState(false)
-  const [authModalOpen, setAuthModalOpen] = useState(false)
-  const { user } = useAuth()
 
   return (
     <>
@@ -53,18 +48,16 @@ function MarketingHeader() {
 
           <div className="flex items-center gap-4">
             <span className="text-[10px] font-medium uppercase tracking-widest text-slate-500">
-              v2.4.0
+              ambalabs v0.1.1
             </span>
-            {user ? (
-              <UserDropdown />
-            ) : (
-              <button
-                onClick={() => setAuthModalOpen(true)}
-                className="rounded-full bg-purple-500 px-5 py-2 text-[10px] font-bold uppercase text-[#030712] transition-all hover:opacity-90 active:scale-95"
-              >
-                Sign in
-              </button>
-            )}
+            <a
+              href="https://www.npmjs.com/package/ambalabs"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full bg-purple-500 px-5 py-2 text-[10px] font-bold uppercase text-[#030712] transition-all hover:opacity-90 active:scale-95"
+            >
+              npm package
+            </a>
           </div>
         </div>
       </header>
@@ -78,7 +71,6 @@ function MarketingHeader() {
           active: item.key === 'overview',
         }))}
       />
-      <AuthModal isOpen={authModalOpen} onClose={() => setAuthModalOpen(false)} />
     </>
   )
 }

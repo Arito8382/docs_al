@@ -11,7 +11,7 @@ function DocsFooterNav() {
           <div className="flex items-center gap-3">
             <ArrowLeft className="h-5 w-5 text-slate-400 transition-colors group-hover:text-purple-500" />
             <span className="text-lg font-extrabold text-slate-400 transition-colors group-hover:text-white">
-              Project Goals
+              Overview
             </span>
           </div>
         </a>

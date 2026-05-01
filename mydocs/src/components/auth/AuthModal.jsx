@@ -2,7 +2,7 @@ import { useGoogleLogin } from '@react-oauth/google'
 import { AnimatePresence, motion } from 'framer-motion'
 import { X } from 'lucide-react'
 
-import { useAuth } from '../../contexts/AuthContext'
+import { useAuth } from '../../contexts/useAuth'
 
 export default function AuthModal({ isOpen, onClose }) {
   const { login } = useAuth()

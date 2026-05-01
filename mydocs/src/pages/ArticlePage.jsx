@@ -1,21 +1,19 @@
-import { Copy, Bolt } from 'lucide-react'
+import { Copy, PackageCheck } from 'lucide-react'
 import { useState } from 'react'
 
 import DocsFooterNav from '../components/layout/DocsFooterNav'
 import DocsLayout from '../layouts/DocsLayout'
 import { articleFeatureCards, articleQuickStartLines } from '../data/content'
 
-const articleImage =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuAO8A_YvI-Xi0BEF-WpTip1h2psbvzs-3LzJFbbBUp3Z3Fgr36jOOUMHgUMFtgOBCfWVAK-SnGj1VsAPl-wcoUzAtT8w6tVpLC3qHJKJyYY8pFLH5eEEB8G5fs-DAUKBqFYBi291Ukkc1lelud_0dfsx29bMPixXO6RTVT-VYDc7WpathhQtLbpEN4rgaXG1q2HiWecfAVydAeWpU21KURkH8kz-_hdZFahuG656ZkETMb7cssO7P_k6syiUEQGTl-RVLxqKUWbY7c'
-
 function ArticlePage() {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = async () => {
     const snippet = [
-      'npm install @ambalabs/docs-core',
-      'ambalabs-docs init --project-name amba-docs',
-      'Success! Documentation live at: http://localhost:3000',
+      'npm install ambalabs',
+      'import { maskEmail, maskPhone } from "ambalabs"',
+      'maskEmail("intan@example.com") // i***n@example.com',
+      'maskPhone("081234567890") // 0812****7890',
     ].join('\n')
 
     try {
@@ -29,26 +27,27 @@ function ArticlePage() {
 
   return (
     <DocsLayout
-      activeTopLabel="Installation"
-      activeSidebarKey="installation"
+      activeTopLabel="Getting Started"
+      activeSidebarKey="getting-started"
       showSupport
       footerVariant="brandRight"
     >
       <article className="max-w-4xl">
-        <header id="overview" className="mb-12">
+        <header className="mb-12">
           <nav className="mb-4 flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-slate-500">
             <span>Docs</span>
             <span className="text-xs">›</span>
-            <span>Getting Started</span>
+            <span>Package</span>
             <span className="text-xs">›</span>
-            <span className="text-purple-500">Introduction</span>
+            <span className="text-purple-500">Getting Started</span>
           </nav>
           <h1 className="mb-6 text-5xl font-black leading-[1.1] tracking-[-0.04em] text-white">
-            Introduction to AmbaLabs Docs
+            Getting Started with `ambalabs`
           </h1>
           <p className="max-w-2xl text-lg leading-[1.6] text-[#cfc2d6]">
-            A high-performance technical documentation framework engineered for
-            clarity, speed, and structural integrity.
+            Panduan ini menjelaskan cara install package, format import yang benar,
+            contoh syntax dasar, dan perilaku penting yang perlu diketahui sebelum
+            dipakai di project production.
           </p>
         </header>
 
@@ -57,32 +56,28 @@ function ArticlePage() {
             <div className="relative z-10">
               <div className="mb-4 flex items-center gap-3">
                 <span className="bg-purple-500 px-2 py-0.5 text-[10px] font-black uppercase tracking-widest text-[#030712]">
-                  New in v2.0
+                  Current release
                 </span>
-                <h4 className="text-lg font-extrabold text-white">
-                  Advanced Telemetry Integration
-                </h4>
+                <h4 className="text-lg font-extrabold text-white">ambalabs@0.1.1</h4>
               </div>
               <p className="text-base leading-[1.6] text-[#cfc2d6]">
-                Version 2.0 introduces native support for real-time telemetry streaming
-                directly into your documentation components. Experience zero-latency
-                performance monitoring and hot-reloading for all code snippets and live
-                examples.
+                Package ini sudah dipublish publik ke npm dan dokumentasi ini mengikuti
+                release terkini yang tersedia sebagai `latest`.
               </p>
             </div>
-            <Bolt className="absolute -bottom-4 -right-4 h-28 w-28 opacity-10" />
+            <PackageCheck className="absolute -bottom-4 -right-4 h-28 w-28 opacity-10" />
           </div>
         </section>
 
         <section className="mb-12">
           <h2 className="mb-6 text-[32px] font-extrabold leading-[1.2] tracking-[-0.02em] text-white">
-            Core Philosophy
+            Why this package exists
           </h2>
           <p className="mb-6 text-base leading-[1.6] text-[#cfc2d6]">
-            Technical documentation should not just be informative; it should be an
-            extension of your engineering standards. AmbaLabs Docs is built on three
-            pillars of uncompromising quality that ensure your developers spend less
-            time searching and more time shipping.
+            `ambalabs` dibuat untuk kasus sederhana dan berulang: menyamarkan data
+            sensitif tanpa harus membawa utility internal dari project ke project.
+            Fokus awal package ini adalah plain text masking untuk aplikasi dashboard,
+            log viewer, CRM, dan admin tooling.
           </p>
           <div className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-2">
             {articleFeatureCards.map((card) => {
@@ -102,13 +97,52 @@ function ArticlePage() {
           </div>
         </section>
 
+        <section id="install" className="mb-12">
+          <h2 className="mb-6 text-[32px] font-extrabold leading-[1.2] tracking-[-0.02em] text-white">
+            Install
+          </h2>
+          <div className="rounded-2xl border border-slate-800 bg-[#0b101c] p-6">
+            <pre className="overflow-x-auto text-sm leading-relaxed text-slate-200">
+              <code>npm install ambalabs</code>
+            </pre>
+          </div>
+          <p className="mt-4 text-sm text-slate-400">
+            Jika Anda ingin mengunci ke versi tertentu, gunakan `npm install
+            ambalabs@0.1.1`.
+          </p>
+        </section>
+
+        <section id="import" className="mb-12">
+          <h2 className="mb-6 text-[32px] font-extrabold leading-[1.2] tracking-[-0.02em] text-white">
+            Import
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border border-slate-800 bg-[#0b101c] p-6">
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-purple-400">
+                ESM
+              </p>
+              <pre className="overflow-x-auto text-sm leading-relaxed text-slate-200">
+                <code>{'import { maskEmail, maskPhone } from "ambalabs"'}</code>
+              </pre>
+            </div>
+            <div className="rounded-2xl border border-slate-800 bg-[#0b101c] p-6">
+              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.3em] text-purple-400">
+                CommonJS
+              </p>
+              <pre className="overflow-x-auto text-sm leading-relaxed text-slate-200">
+                <code>{'const { maskName } = await import("ambalabs")'}</code>
+              </pre>
+            </div>
+          </div>
+        </section>
+
         <section id="quick-start" className="mb-12">
           <h2 className="mb-6 text-[32px] font-extrabold leading-[1.2] tracking-[-0.02em] text-white">
             Quick Start
           </h2>
           <p className="mb-6 text-base leading-[1.6] text-[#cfc2d6]">
-            Initialize your environment with a single command. AmbaLabs Docs handles
-            dependencies and environment variables automatically.
+            Snippet berikut adalah bentuk paling pendek untuk memastikan package sudah
+            masuk dan berfungsi.
           </p>
           <div className="overflow-hidden border border-slate-800">
             <div className="flex items-center justify-between border-b border-slate-800 bg-slate-900 px-4 py-2">
@@ -117,7 +151,7 @@ function ArticlePage() {
                 <div className="h-3 w-3 rounded-full bg-slate-700" />
                 <div className="h-3 w-3 rounded-full bg-slate-700" />
                 <span className="ml-4 text-[10px] font-bold uppercase tracking-widest text-slate-500">
-                  terminal // bash
+                  terminal // package test
                 </span>
               </div>
               <button
@@ -133,18 +167,18 @@ function ArticlePage() {
               <code>
                 {articleQuickStartLines.map((line) => (
                   <div key={line.text}>
-                    {line.symbol ? (
-                      <span className="text-purple-400">{line.symbol} </span>
-                    ) : null}
-                    <span className={line.subtle ? 'text-slate-500' : 'text-white'}>
+                    {line.symbol ? <span className="text-purple-400">{line.symbol} </span> : null}
+                    <span
+                      className={
+                        line.subtle
+                          ? 'text-slate-500'
+                          : line.success
+                            ? 'text-green-400'
+                            : 'text-white'
+                      }
+                    >
                       {line.text}
                     </span>
-                    {line.suffix ? (
-                      <>
-                        {' '}
-                        <span className="text-green-400">{line.suffix}</span>
-                      </>
-                    ) : null}
                   </div>
                 ))}
               </code>
@@ -153,20 +187,20 @@ function ArticlePage() {
         </section>
 
         <section className="mb-20">
-          <div className="relative mb-6 aspect-video">
-            <img
-              src={articleImage}
-              alt="Architecture visualization"
-              className="h-full w-full object-cover brightness-50 contrast-125 grayscale"
-            />
-            <div className="pointer-events-none absolute inset-0 border border-purple-500/30" />
-            <div className="glass-surface absolute bottom-4 left-4 max-w-xs border border-slate-700 p-4">
-              <p className="mb-1 text-[10px] font-bold uppercase tracking-widest text-white">
-                Architecture Visualization
-              </p>
-              <p className="text-[12px] text-slate-400">
-                Diagram of the v2.4 execution pipeline and data-layer distribution.
-              </p>
+          <h2 className="mb-6 text-[32px] font-extrabold leading-[1.2] tracking-[-0.02em] text-white">
+            Important behavior
+          </h2>
+          <div className="grid gap-4">
+            <div className="rounded-2xl border border-slate-800 bg-[#0b101c] p-5 text-slate-300">
+              Input `null` atau `undefined` akan menghasilkan string kosong.
+            </div>
+            <div className="rounded-2xl border border-slate-800 bg-[#0b101c] p-5 text-slate-300">
+              `maskPhone()` dan `maskCard()` hanya menyamarkan digit. Separator seperti
+              spasi atau `-` tetap dipertahankan.
+            </div>
+            <div className="rounded-2xl border border-slate-800 bg-[#0b101c] p-5 text-slate-300">
+              Jika `maskChar` berisi lebih dari satu karakter, hanya karakter pertama yang
+              dipakai.
             </div>
           </div>
         </section>

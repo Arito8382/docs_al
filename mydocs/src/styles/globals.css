@@ -100,7 +100,7 @@
   }
 
   .footer-link {
-    @apply text-[10px] font-bold uppercase tracking-widest text-slate-600 underline decoration-2 decoration-purple-500 transition-all hover:text-white;
+    @apply text-[10px] font-bold uppercase tracking-widest text-slate-600 transition-all hover:text-white;
   }
 
   .glass-surface {

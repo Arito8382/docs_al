@@ -3,21 +3,28 @@ export const pageUrls = {
   article: '/article.html',
   api: '/api-reference.html',
   search: '/search.html',
-  apiKeys: '/api-keys.html',
-  architecture: '/architecture.html',
+  examples: '/api-keys.html',
+  notes: '/architecture.html',
 }
 
 export const footerLinks = [
-  { label: 'Status', href: '#' },
-  { label: 'Changelog', href: '#' },
-  { label: 'Github', href: 'https://github.com/Arito8382' },
-  { label: 'Security', href: '#' },
+  { label: 'Overview', href: pageUrls.overview },
+  { label: 'Getting Started', href: pageUrls.article },
+  { label: 'API Reference', href: pageUrls.api },
+  { label: 'Examples', href: pageUrls.examples },
+  { label: 'Search', href: pageUrls.search },
+]
+
+export const socialLinks = [
+  { label: 'GitHub', href: 'https://github.com/Arito8382/Pkg-AmbaLabs', icon: 'github' },
+  { label: 'npm', href: 'https://www.npmjs.com/package/ambalabs', icon: 'npm' },
 ]
 
 export const globalHeaderLinks = [
   { label: 'Overview', href: pageUrls.overview },
-  { label: 'Installation', href: pageUrls.article },
+  { label: 'Getting Started', href: pageUrls.article },
   { label: 'API Reference', href: pageUrls.api },
+  { label: 'Examples', href: pageUrls.examples },
   { label: 'Search', href: pageUrls.search },
 ]
 
@@ -28,9 +35,9 @@ export const searchNavLinks = globalHeaderLinks
 
 export const sidebarLinks = [
   { key: 'overview', label: 'Overview', href: pageUrls.overview, icon: 'dashboard' },
-  { key: 'installation', label: 'Installation', href: `${pageUrls.article}#quick-start`, icon: 'download' },
+  { key: 'getting-started', label: 'Getting Started', href: pageUrls.article, icon: 'download' },
   { key: 'api', label: 'API Reference', href: pageUrls.api, icon: 'account_tree' },
+  { key: 'examples', label: 'Examples', href: pageUrls.examples, icon: 'layers' },
+  { key: 'notes', label: 'Package Notes', href: pageUrls.notes, icon: 'bolt' },
   { key: 'search', label: 'Search', href: pageUrls.search, icon: 'search' },
-  { key: 'api-keys', label: 'API Keys', href: pageUrls.apiKeys, icon: 'lock' },
-  { key: 'architecture', label: 'Architecture', href: pageUrls.architecture, icon: 'account_tree' },
 ]
